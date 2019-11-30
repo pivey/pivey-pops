@@ -1,68 +1,99 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Popups by Peter Ivey-Hansen - aka pivey-pops
 
-## Available Scripts
+This module is a customizable alternative default JS prompts and alerts. These popups can act as alerts
+with only one cancel button or as a confirm alert where the user can accept a presented condition thus
+triggering a subsequential event.
 
-In the project directory, you can run:
+These popups are intended to be more stylish and better as they do not block the thread, allowing background actions to continue eg. loading data.
 
-### `npm start`
+simply pass in props to create the desired styling for your alert popup.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## default styling
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**_ copy these props to emulate the screenshots _**
 
-### `npm test`
+const defaults = {
+Modalbgc: 'transparent',
+btnRadius: '10px',
+btnTxtColor: 'white',
+hoverBGC: '#ff8800',
+btnLeftColor: '#D81734',
+btnRightColor: '#2191FB',
+motherPadding: '1rem',
+popUpBGC: '#e1e5e8',
+popUpMotherRadius: '5px',
+titlePadding: '0.5rem 0.5rem',
+txtColor: 'black',
+};
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## props
 
-### `npm run build`
+## \* = required props
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
+- confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
+  btns={1} number - determines how may buttons show within the popup || default = 1 || max = 2
+  Modalbgc='transparent' - string
+  btnRadius='10px' - string
+  btnTxtColor: 'white' - string
+  hoverBGC: '#ff8800' - string
+  btnLeftColor: '#D81734' - string
+  btnRightColor: '#2191FB' - string
+  motherPadding: '1rem' - string
+  popUpBGC: '#e1e5e8' - string
+  popUpMotherRadius: '5px' - string
+  titlePadding: '0.5rem 0.5rem' - string
+  txtColor: 'black' - string
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+deconstruct an object to use as props within the component eg.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const [popUp, setPopUp] = useState({
+open: false,
+title: 'User deleted',
+text: 'the user with the name of: John was successfully deleted'
+});
 
-### `npm run eject`
+this passes in the text, title and boolean that opens and closes the alert box
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Example usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<PopUpBtn type="button" onClick={() => setPopUp({
+...popUp,
+open: !popUp.open,
+})}>Toggle popup</PopUpBtn>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+{popUp.open && <PiveyPops
+{...popUp}
+{...params}
+closePopUp={closePopUp} // _ functions must be sent in like so
+confirm={confirmPopUp} // _
+motherPadding={'1rem'}
+titlePadding={'0.5rem 0.5rem'}
+messagePadding={'0.5rem'}
+maxW={'15rem'}
+modalBGC="rgba(0, 0, 0, 0.6)"
+popUpBGC="#e1e5e8"
+motherRadius="10px"
+btns={2}
+/>}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+props sent in are all destructed so can be sent in like so:
 
-## Learn More
+## functions must be sent in as seen above, not as methods in a props object
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const params = {
+titleFontSize: '1.2rem',
+messageFontSize: '0.8rem'
+motherPadding: '1rem',
+titlePadding: '0.5rem 0.5rem',
+messagePadding: '0.5rem',
+maxW: '15rem',
+modalBGC: "rgba(0, 0, 0, 0.6)":
+popUpBGC: "#e1e5e8"
+motherRadius: "10px",
+btns: 2
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<PiveyPops
+{...params}
+/>
