@@ -60,9 +60,9 @@ this passes in the text, title and boolean that opens and closes the alert box
 ````<PopUpBtn type="button" onClick={() => setPopUp({
         ...popUp,
         open: !popUp.open,
-    })}>Toggle popup</PopUpBtn> ```
+    })}>Toggle popup</PopUpBtn>```
 
-``` {popUp.open && <PiveyPops
+```{popUp.open && <PiveyPops
         {...popUp}
         {...params}
         closePopUp={closePopUp} // _ functions must be sent in like so
@@ -75,28 +75,28 @@ this passes in the text, title and boolean that opens and closes the alert box
         popUpBGC="#e1e5e8"
         motherRadius="10px"
         btns={2}
-    />} ```
+    />}```
 
 props sent in are all destructed so can be sent in like so:
 
 ### functions must be sent in as seen above, not as methods in a props object
 
 const params = {
-titleFontSize: '1.2rem', //
-messageFontSize: '0.8rem' //
-motherPadding: '1rem', //
-titlePadding: '0.5rem 0.5rem', //
-messagePadding: '0.5rem', //
-maxW: '15rem', //
-modalBGC: "rgba(0, 0, 0, 0.6)", //
+titleFontSize: '1.2rem',
+messageFontSize: '0.8rem'
+motherPadding: '1rem',
+titlePadding: '0.5rem 0.5rem',
+messagePadding: '0.5rem',
+maxW: '15rem',
+modalBGC: "rgba(0, 0, 0, 0.6)",
 popUpBGC: "#e1e5e8"//
-motherRadius: "10px", //
-btns: 2 //
+motherRadius: "10px",
+btns: 2
 }
 
-``` <PiveyPops
+```<PiveyPops
 {...params}
-/> ```
+/>```
 
 to write about - the visibility of the modal - it is always on screen overlaying everything (z-index: 1000)but is not visible until a 'true' value is passed into the closePopUp function.
 ````
