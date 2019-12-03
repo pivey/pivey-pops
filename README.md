@@ -60,59 +60,79 @@ this passes in the text, title and boolean that opens and closes the alert box
 ### Example usage
 
 ```javascript
-
- // a button to toggle the popup
-<PopUpBtn type="button" onClick={() => setPopUp({
-        ...popUp,
-        open: !popUp.open,
-    })}>Toggle popup</PopUpBtn>
-
- // function receiving the response from the cancel button press
- const closePopUp = (e) => {
+// a button to toggle the popup
+<PopUpBtn
+  type="button"
+  onClick={() =>
     setPopUp({
       ...popUp,
-      open: e
+      open: !popUp.open
     })
   }
+>
+  Toggle popup
+</PopUpBtn>;
 
- // function receiving the response from the confirm button press
-  const confirmPopUp = (e) => {
-    setAccept(e)
-  }
+// function receiving the response from the cancel button press
+const closePopUp = e => {
+  setPopUp({
+    ...popUp,
+    open: e
+  });
+};
 
-{popUp.open && <PiveyPops
-    {...popUp}
-    {...params}
-    // functions must be sent in like so
-    closePopUp={closePopUp}
-    confirm={confirmPopUp}
-    motherPadding={'1rem'}
-    titlePadding={'0.5rem 0.5rem'}
-    messagePadding={'0.5rem'}
-    maxW={'15rem'}
-    modalBGC="rgba(0, 0, 0, 0.6)"
-    popUpBGC="#e1e5e8"
-    motherRadius="10px"
-    btns={2}
-    />}
+// function receiving the response from the confirm button press
+const confirmPopUp = e => {
+  setAccept(e);
+};
 
 // props sent in are all destructed so can be sent in like so in an object:
-const params = {
-titleFontSize: '1.2rem',
-messageFontSize: '0.8rem'
-motherPadding: '1rem',
-titlePadding: '0.5rem 0.5rem',
-messagePadding: '0.5rem',
-maxW: '15rem',
-modalBGC: "rgba(0, 0, 0, 0.6)",
-popUpBGC: "#e1e5e8"//
-motherRadius: "10px",
-btns: 2
+
+// Example 1: props passed within component
+{
+  popUp.open && (
+    <PiveyPops
+      {...popUp}
+      {...params}
+      // functions must be sent in like so
+      closePopUp={closePopUp}
+      confirm={confirmPopUp}
+      motherPadding={"1rem"}
+      titlePadding={"0.5rem 0.5rem"}
+      messagePadding={"0.5rem"}
+      maxW={"15rem"}
+      modalBGC="rgba(0, 0, 0, 0.6)"
+      popUpBGC="#e1e5e8"
+      motherRadius="10px"
+      btns={2}
+    />
+  );
 }
 
-<PiveyPops
-{...params}
-/>
+// Example 2: props passed within an object
+const props = {
+  titleFontSize: "1.2rem",
+  messageFontSize: "0.8rem",
+  motherPadding: "1rem",
+  titlePadding: "0.5rem 0.5rem",
+  messagePadding: "0.5rem",
+  maxW: "15rem",
+  modalBGC: "rgba(0, 0, 0, 0.6)",
+  popUpBGC: "#e1e5e8",
+  motherRadius: "10px",
+  btns: 2,
+  hoverBGC: "darkGrey",
+  hoverTxtColor: "purple",
+  closePopUp: closePopUp,
+  confirm: confirmPopUp,
+  open: popUp.open,
+  title: popUp.title,
+  text: popUp.text
+};
+
+{
+  popUp.open && <PiveyPops {...props} />;
+}
 ```
 
 - to write about - the visibility of the modal - it is always on screen overlaying everything (z-index: 1000)but is not visible until a 'true' value is passed into the closePopUp function.

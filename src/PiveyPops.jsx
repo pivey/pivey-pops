@@ -22,6 +22,7 @@ const defaults = {
     btnRadius: '10px',
     btnTxtColor: 'white',
     hoverBGC: '#ff8800',
+    hoverTxtColor:'white',
     btnLeftColor: '#D81734',
     btnRightColor: '#2191FB',
     motherPadding: '1rem',
@@ -57,7 +58,8 @@ const SubmitBtn = styled.button`
     color: ${({ color }) => color || defaults.btnTxtColor};
     border:2px solid transparent;
     &:hover{
-        background-color: ${({ hover }) => hover || defaults.hoverBGC};
+        background-color: ${({ hoverBGC }) => hoverBGC || defaults.hoverBGC};
+        color: ${({ hoverTxt }) => hoverTxt || defaults.hoverTxtColor};
         cursor:pointer;
     }
      &:focus {
@@ -98,7 +100,8 @@ const Title = styled.p`
     text-justify: inter-word;
     font-size:${({ fs }) => fs};
     text-align: center;
-    margin-bottom: 0rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     text-justify: inter-character;
     padding:${({ padding }) => padding || defaults.titlePadding};
     color: ${({ color }) => color || defaults.txtColor};
@@ -113,7 +116,7 @@ const PopUpMessage = styled(Title)`
     font-size:${({ fs }) => fs};
 `;
 
-const PiveyPops = ({ closePopUp, title, text, open, motherPadding, titlePadding, messagePadding, maxW, modalBGC, popUpBGC, btns, confirm, titleFontSize, messageFontSize, btnRadius, btnTxtColor, btnRightColor, btnLeftColor, txtColor, popUpRadius, hoverBGC }) => {
+const PiveyPops = ({ closePopUp, title, text, open, motherPadding, titlePadding, messagePadding, maxW, modalBGC, popUpBGC, btns, confirm, titleFontSize, messageFontSize, btnRadius, btnTxtColor, btnRightColor, btnLeftColor, txtColor, popUpRadius, hoverBGC, hoverTxtColor }) => {
 
     if (btns === undefined) btns = 1;
 
@@ -131,7 +134,8 @@ const PiveyPops = ({ closePopUp, title, text, open, motherPadding, titlePadding,
                             btnBGC={btnLeftColor} //
                             radius={btnRadius} //
                             color={btnTxtColor} //
-                            hover={hoverBGC} //
+                            hoverBGC={hoverBGC} //
+                            hoverTxt={hoverTxtColor} //
                             onClick={() =>
                                 closePopUp(false)
                             }
@@ -146,7 +150,8 @@ const PiveyPops = ({ closePopUp, title, text, open, motherPadding, titlePadding,
                             btnBGC={btnLeftColor} //
                             radius={btnRadius} //
                             color={btnTxtColor} //
-                            hover={hoverBGC} //
+                            hoverBGC={hoverBGC} //
+                            hoverTxt={hoverTxtColor} //
                             onClick={() =>
                                 closePopUp(false)
                             }
@@ -158,12 +163,15 @@ const PiveyPops = ({ closePopUp, title, text, open, motherPadding, titlePadding,
                             btnBGC={btnRightColor} //
                             radius={btnRadius} //
                             color={btnTxtColor}  //
-                            hover={hoverBGC} //
-                            onClick={() =>
-                                confirm(true)
+                            hoverBGC={hoverBGC} //
+                            hoverTxt={hoverTxtColor} //
+                            onClick={() => {
+                                confirm(true);
+                                closePopUp(false);
                             }
-                        >
-                            Confirm
+                    }
+                >
+                    Confirm
                     </ConfirmBtn>
                     </ButtonHolder>
                 }

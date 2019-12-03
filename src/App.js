@@ -44,10 +44,25 @@ function App() {
     setAccept(e)
   }
 
-  const params = {
+  const props = {
     titleFontSize: '1.2rem',
-    messageFontSize: '0.8rem'
-  }
+    messageFontSize: '0.8rem',
+    motherPadding: '1rem',
+    titlePadding: '0.5rem 0.5rem',
+    messagePadding: '0.5rem',
+    maxW: '15rem',
+    modalBGC: "rgba(0, 0, 0, 0.6)",
+    popUpBGC: "#e1e5e8",
+    motherRadius: "10px",
+    btns: 2,
+    hoverBGC: 'darkGrey',
+    hoverTxtColor: 'purple', 
+    closePopUp: closePopUp,
+    confirm: confirmPopUp,
+    open: popUp.open,
+    title: popUp.title,
+    text: popUp.text
+}
 
   return (
     <>
@@ -57,18 +72,7 @@ function App() {
         })}>Toggle popup</PopUpBtn>
 
         {popUp.open && <PiveyPops 
-                        {...popUp} 
-                        {...params} 
-                        closePopUp={closePopUp} 
-                        confirm={confirmPopUp}
-                        motherPadding={'1rem'} 
-                        titlePadding={'0.5rem 0.5rem'} 
-                        messagePadding={'0.5rem'}
-                        maxW={'15rem'}
-                        modalBGC="rgba(0, 0, 0, 0.6)"
-                        popUpBGC="#e1e5e8"
-                        motherRadius="10px"
-                        btns={2}
+                        {...props} 
                         />}
     </>
   )
