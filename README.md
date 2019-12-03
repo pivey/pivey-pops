@@ -10,9 +10,9 @@ simply pass in props to create the desired styling for your alert popup.
 
 ##### How things work.
 
-    The popup box is contained within a modal that is set to visibility: hidden
-    toggling the visibility of the modal also toggles the alert box inside of it.
-    the modal and alert appears above everything on the page due to a z-index of 1000
+    1. The popup box is contained within a modal that is set to visibility: hidden
+    2. toggling the visibility of the modal also toggles the alert box inside of it.
+    3. the modal and alert appears above everything on the page due to a z-index of 1000
 
 ### default styling
 
