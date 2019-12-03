@@ -13,37 +13,37 @@ simply pass in props to create the desired styling for your alert popup.
 **_ copy these props to emulate the screenshots _**
 
 const defaults = {
-Modalbgc: 'transparent',
-btnRadius: '10px',
-btnTxtColor: 'white',
-hoverBGC: '#ff8800',
-btnLeftColor: '#D81734',
-btnRightColor: '#2191FB',
-motherPadding: '1rem',
-popUpBGC: '#e1e5e8',
-popUpMotherRadius: '5px',
-titlePadding: '0.5rem 0.5rem',
-txtColor: 'black',
+...Modalbgc: 'transparent',
+...btnRadius: '10px',
+...btnTxtColor: 'white',
+...hoverBGC: '#ff8800',
+...btnLeftColor: '#D81734',
+...btnRightColor: '#2191FB',
+...motherPadding: '1rem',
+...popUpBGC: '#e1e5e8',
+...popUpMotherRadius: '5px',
+...titlePadding: '0.5rem 0.5rem',
+...txtColor: 'black',
 };
 
 ### props
 
 #### \* = required props
 
-- closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
-- confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
-- btns={1} number - determines how may buttons show within the popup || default = 1 || max = 2
-- Modalbgc='transparent' - string
-- btnRadius='10px' - string
-- btnTxtColor: 'white' - string
-- hoverBGC: '#ff8800' - string
-- btnLeftColor: '#D81734' - string
-- btnRightColor: '#2191FB' - string
-- motherPadding: '1rem' - string
-- popUpBGC: '#e1e5e8' - string
-- popUpMotherRadius: '5px' - string
-- titlePadding: '0.5rem 0.5rem' - string
-- txtColor: 'black' - string
+1. - closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
+2. - confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
+3. btns={1} number - determines how may buttons show within the popup || default = 1 || max = 2
+4. Modalbgc='transparent' - string
+5. btnRadius='10px' - string
+6. btnTxtColor: 'white' - string
+7. hoverBGC: '#ff8800' - string
+8. btnLeftColor: '#D81734' - string
+9. btnRightColor: '#2191FB' - string
+   10.motherPadding: '1rem' - string
+   11.popUpBGC: '#e1e5e8' - string
+   12.popUpMotherRadius: '5px' - string
+   13.titlePadding: '0.5rem 0.5rem' - string
+   14.txtColor: 'black' - string
 
 deconstruct an object to use as props within the component eg.
 
