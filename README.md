@@ -13,25 +13,26 @@ simply pass in props to create the desired styling for your alert popup.
 **_ copy these props to emulate the screenshots _**
 
 const defaults = {
-...Modalbgc: 'transparent',
-...btnRadius: '10px',
-...btnTxtColor: 'white',
-...hoverBGC: '#ff8800',
-...btnLeftColor: '#D81734',
-...btnRightColor: '#2191FB',
-...motherPadding: '1rem',
-...popUpBGC: '#e1e5e8',
-...popUpMotherRadius: '5px',
-...titlePadding: '0.5rem 0.5rem',
-...txtColor: 'black',
-};
+
+- Modalbgc: 'transparent',
+- btnRadius: '10px',
+- btnTxtColor: 'white',
+- hoverBGC: '#ff8800',
+- btnLeftColor: '#D81734',
+- btnRightColor: '#2191FB',
+- motherPadding: '1rem',
+- popUpBGC: '#e1e5e8',
+- popUpMotherRadius: '5px',
+- titlePadding: '0.5rem 0.5rem',
+- txtColor: 'black',
+  };
 
 ### props
 
 #### \* = required props
 
-1. - closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
-2. - confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
+1. \* closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
+2. \* confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
 3. btns={1} number - determines how may buttons show within the popup || default = 1 || max = 2
 4. Modalbgc='transparent' - string
 5. btnRadius='10px' - string
