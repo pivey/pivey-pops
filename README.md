@@ -69,13 +69,15 @@ txtColor: 'black',
 
 ##### deconstruct an object to use as props within the component eg.
 
+```javascript
 const [popUp, setPopUp] = useState({
-open: false,
-title: 'User deleted',
-text: 'the user with the name of: John was successfully deleted'
+  open: false,
+  title: "User deleted",
+  text: "the user with the name of: John was successfully deleted"
 });
+```
 
-this passes in the text, title and boolean that opens and closes the alert box
+    this passes in the text, title and boolean that opens and closes the alert box
 
 ### Example usage
 
