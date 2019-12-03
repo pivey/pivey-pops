@@ -49,19 +49,19 @@ txtColor: 'black',
 |   titlePadding    |   string   | '0.5rem 0.5rem' |
 |     txtColor      |   string   |         'black' |
 
-##### \* closePopUp
+#### \* closePopUp
 
-passes a false boolean back to the parent to close the alert box
+    passes a false boolean back to the parent to close the alert box
 
-##### \* confirm
+#### \* confirm
 
     passes a true boolean back to the parent to confirm
 
-##### \* btns
+#### \* btns
 
-###### determines how may buttons show within the popup || default = 1 || max = 2
+    determines how may buttons show within the popup || default = 1 || max = 2
 
-deconstruct an object to use as props within the component eg.
+##### deconstruct an object to use as props within the component eg.
 
 const [popUp, setPopUp] = useState({
 open: false,
