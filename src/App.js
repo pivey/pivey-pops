@@ -54,7 +54,7 @@ function App() {
     modalBGC: "rgba(0, 0, 0, 0.6)",
     popUpBGC: "#e1e5e8",
     motherRadius: "10px",
-    btns: 2,
+    btns: 1,
     hoverBGC: 'darkGrey',
     hoverTxtColor: 'purple', 
     closePopUp: closePopUp,

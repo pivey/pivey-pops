@@ -32,20 +32,34 @@ txtColor: 'black',
 
 #### \* = required props
 
-1. \* closePopUp={closePopUp} - function that passes a false boolean back to the parent to close the alert box
-2. \* confirm={confirmPopUp} - function that passes a true boolean back to confirm an action from the user
-3. btns={1} number - determines how may buttons show within the popup || default = 1 || max = 2
-4. Modalbgc='transparent' - string
-5. btnRadius='10px' - string
-6. btnTxtColor: 'white' - string
-7. hoverBGC: '#ff8800' - string
-8. btnLeftColor: '#D81734' - string
-9. btnRightColor: '#2191FB' - string
-   10.motherPadding: '1rem' - string
-   11.popUpBGC: '#e1e5e8' - string
-   12.popUpMotherRadius: '5px' - string
-   13.titlePadding: '0.5rem 0.5rem' - string
-   14.txtColor: 'black' - string
+|    Prop names     | Prop types |  example values |
+| :---------------: | :--------: | --------------: |
+|   \* closePopUp   |  function  |      closePopUp |
+|    \* confirm     |  function  |    confirmPopUp |
+|      \* btns      |   number   |          1 or 2 |
+|     Modalbgc      |   string   |   'transparent' |
+|     btnRadius     |   string   |          '10px' |
+|    btnTxtColor    |   string   |         'white' |
+|     hoverBGC      |   string   |       '#ff8800' |
+|   btnLeftColor    |   string   |       '#D81734' |
+|   btnRightColor   |   string   |       '#2191FB' |
+|   motherPadding   |   string   |          '1rem' |
+|     popUpBGC      |   string   |       '#e1e5e8' |
+| popUpMotherRadius |   string   |           '5px' |
+|   titlePadding    |   string   | '0.5rem 0.5rem' |
+|     txtColor      |   string   |         'black' |
+
+##### \* closePopUp
+
+passes a false boolean back to the parent to close the alert box
+
+##### \* confirm
+
+    passes a true boolean back to the parent to confirm
+
+##### \* btns
+
+###### determines how may buttons show within the popup || default = 1 || max = 2
 
 deconstruct an object to use as props within the component eg.
 
@@ -74,6 +88,7 @@ this passes in the text, title and boolean that opens and closes the alert box
 </PopUpBtn>;
 
 // function receiving the response from the cancel button press
+
 const closePopUp = e => {
   setPopUp({
     ...popUp,
@@ -82,6 +97,7 @@ const closePopUp = e => {
 };
 
 // function receiving the response from the confirm button press
+
 const confirmPopUp = e => {
   setAccept(e);
 };
@@ -89,27 +105,27 @@ const confirmPopUp = e => {
 // props sent in are all destructed so can be sent in like so in an object:
 
 // Example 1: props passed within component
-{
-  popUp.open && (
-    <PiveyPops
-      {...popUp}
-      {...params}
-      // functions must be sent in like so
-      closePopUp={closePopUp}
-      confirm={confirmPopUp}
-      motherPadding={"1rem"}
-      titlePadding={"0.5rem 0.5rem"}
-      messagePadding={"0.5rem"}
-      maxW={"15rem"}
-      modalBGC="rgba(0, 0, 0, 0.6)"
-      popUpBGC="#e1e5e8"
-      motherRadius="10px"
-      btns={2}
-    />
-  );
-}
+
+popUp.open && (
+  <PiveyPops
+    {...popUp}
+    {...params}
+    // functions must be sent in like so
+    closePopUp={closePopUp}
+    confirm={confirmPopUp}
+    motherPadding={"1rem"}
+    titlePadding={"0.5rem 0.5rem"}
+    messagePadding={"0.5rem"}
+    maxW={"15rem"}
+    modalBGC="rgba(0, 0, 0, 0.6)"
+    popUpBGC="#e1e5e8"
+    motherRadius="10px"
+    btns={2}
+  />
+);
 
 // Example 2: props passed within an object
+
 const props = {
   titleFontSize: "1.2rem",
   messageFontSize: "0.8rem",
