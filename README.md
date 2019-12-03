@@ -12,20 +12,21 @@ simply pass in props to create the desired styling for your alert popup.
 
 **_ copy these props to emulate the screenshots _**
 
+```
 const defaults = {
-
-- Modalbgc: 'transparent',
-- btnRadius: '10px',
-- btnTxtColor: 'white',
-- hoverBGC: '#ff8800',
-- btnLeftColor: '#D81734',
-- btnRightColor: '#2191FB',
-- motherPadding: '1rem',
-- popUpBGC: '#e1e5e8',
-- popUpMotherRadius: '5px',
-- titlePadding: '0.5rem 0.5rem',
-- txtColor: 'black',
-  };
+Modalbgc: 'transparent',
+btnRadius: '10px',
+btnTxtColor: 'white',
+hoverBGC: '#ff8800',
+btnLeftColor: '#D81734',
+btnRightColor: '#2191FB',
+motherPadding: '1rem',
+popUpBGC: '#e1e5e8',
+popUpMotherRadius: '5px',
+titlePadding: '0.5rem 0.5rem',
+txtColor: 'black',
+};
+```
 
 ### props
 
@@ -58,12 +59,13 @@ this passes in the text, title and boolean that opens and closes the alert box
 
 ### Example usage
 
-````<PopUpBtn type="button" onClick={() => setPopUp({
+```
+<PopUpBtn type="button" onClick={() => setPopUp({
         ...popUp,
         open: !popUp.open,
-    })}>Toggle popup</PopUpBtn>```
+    })}>Toggle popup</PopUpBtn>
 
-```{popUp.open && <PiveyPops
+{popUp.open && <PiveyPops
         {...popUp}
         {...params}
         closePopUp={closePopUp} // _ functions must be sent in like so
@@ -76,7 +78,7 @@ this passes in the text, title and boolean that opens and closes the alert box
         popUpBGC="#e1e5e8"
         motherRadius="10px"
         btns={2}
-    />}```
+    />}
 
 props sent in are all destructed so can be sent in like so:
 
@@ -95,9 +97,9 @@ motherRadius: "10px",
 btns: 2
 }
 
-```<PiveyPops
+<PiveyPops
 {...params}
-/>```
+/>
+```
 
-to write about - the visibility of the modal - it is always on screen overlaying everything (z-index: 1000)but is not visible until a 'true' value is passed into the closePopUp function.
-````
+- to write about - the visibility of the modal - it is always on screen overlaying everything (z-index: 1000)but is not visible until a 'true' value is passed into the closePopUp function.
