@@ -8,9 +8,15 @@ forces action by appearing on top of a modal which stops any further interaction
 
 simply pass in props to create the desired styling for your alert popup.
 
+##### How things work.
+
+    The popup box is contained within a modal that is set to visibility: hidden
+    toggling the visibility of the modal also toggles the alert box inside of it.
+    the modal and alert appears above everything on the page due to a z-index of 1000
+
 ### default styling
 
-**_ copy these props to emulate the screenshots _**
+#### copy these props to emulate the screenshots
 
 ```
 const defaults = {
@@ -150,5 +156,3 @@ const props = {
   popUp.open && <PiveyPops {...props} />;
 }
 ```
-
-- to write about - the visibility of the modal - it is always on screen overlaying everything (z-index: 1000)but is not visible until a 'true' value is passed into the closePopUp function.
