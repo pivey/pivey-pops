@@ -59,31 +59,44 @@ this passes in the text, title and boolean that opens and closes the alert box
 
 ### Example usage
 
-```
+```javascript
+
+ // a button to toggle the popup
 <PopUpBtn type="button" onClick={() => setPopUp({
         ...popUp,
         open: !popUp.open,
     })}>Toggle popup</PopUpBtn>
 
+ // function receiving the response from the cancel button press
+ const closePopUp = (e) => {
+    setPopUp({
+      ...popUp,
+      open: e
+    })
+  }
+
+ // function receiving the response from the confirm button press
+  const confirmPopUp = (e) => {
+    setAccept(e)
+  }
+
 {popUp.open && <PiveyPops
-        {...popUp}
-        {...params}
-        closePopUp={closePopUp} // _ functions must be sent in like so
-        confirm={confirmPopUp} // _
-        motherPadding={'1rem'}
-        titlePadding={'0.5rem 0.5rem'}
-        messagePadding={'0.5rem'}
-        maxW={'15rem'}
-        modalBGC="rgba(0, 0, 0, 0.6)"
-        popUpBGC="#e1e5e8"
-        motherRadius="10px"
-        btns={2}
+    {...popUp}
+    {...params}
+    // functions must be sent in like so
+    closePopUp={closePopUp}
+    confirm={confirmPopUp}
+    motherPadding={'1rem'}
+    titlePadding={'0.5rem 0.5rem'}
+    messagePadding={'0.5rem'}
+    maxW={'15rem'}
+    modalBGC="rgba(0, 0, 0, 0.6)"
+    popUpBGC="#e1e5e8"
+    motherRadius="10px"
+    btns={2}
     />}
 
-props sent in are all destructed so can be sent in like so:
-
-### functions must be sent in as seen above, not as methods in a props object
-
+// props sent in are all destructed so can be sent in like so in an object:
 const params = {
 titleFontSize: '1.2rem',
 messageFontSize: '0.8rem'
