@@ -20,6 +20,10 @@ simply pass in props to create the desired styling for your alert popup.
 
 #### copy these props to emulate the screenshots
 
+* screenshot_1_alert_popup: 
+
+* screenshot_2_confirm_popup: 
+
 ```
 const defaults = {
 Modalbgc: 'transparent',
