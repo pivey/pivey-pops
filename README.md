@@ -1,4 +1,6 @@
-# Popups by Peter Ivey-Hansen - pivey-pops
+# Pivey-pops
+
+### Popups by Peter Ivey-Hansen
 
 A customisable alternative to default JS confirmation and alerts boxes. These popups can act as alerts
 with only one cancel button or as a confirm alert with 2 buttons (cancel and confirm )where the user can accept a presented condition.

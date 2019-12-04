@@ -24,8 +24,8 @@ const PopUpBtn = styled.button`
 function App() {
     const [popUp, setPopUp] = useState({
       open: false,
-      title: 'User deleted',
-      text: 'the user with the name of: John was successfully deleted'
+      title: 'Edit User',
+      text: 'Are you content with the edits made to user: Philip?'
     });
     const [accept, setAccept] = useState(false)
 
@@ -54,9 +54,9 @@ function App() {
     modalBGC: "rgba(0, 0, 0, 0.6)",
     popUpBGC: "#e1e5e8",
     motherRadius: "10px",
-    btns: 1,
-    hoverBGC: 'darkGrey',
-    hoverTxtColor: 'purple', 
+    btns: 2,
+    // hoverBGC: 'darkGrey',
+    // hoverTxtColor: 'yellow', 
     closePopUp: closePopUp,
     confirm: confirmPopUp,
     open: popUp.open,
