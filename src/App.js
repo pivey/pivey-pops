@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import './styles/base.css';
-import PiveyPops from './PiveyPops';
+import './components/base.css';
+import PiveyPops from './components/PiveyPops';
 
 const PopUpBtn = styled.button`
   height:auto;
