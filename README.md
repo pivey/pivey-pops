@@ -21,8 +21,10 @@ simply pass in props to create the desired styling for your alert popup.
 #### copy these props to emulate the screenshots
 
 * screenshot_1_alert_popup: 
+![](src/images/alert_popup.png)
 
 * screenshot_2_confirm_popup: 
+![](src/images/confirm_popup.png)
 
 ```
 const defaults = {
